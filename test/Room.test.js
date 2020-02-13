@@ -1,12 +1,26 @@
 const assert = require('assert')
 
-const characters = require('../src/resources/characters')
 const Player = require('../src/models/player/Player')
 
-describe('Player', () => {
+describe('Room', () => {
   describe('create initial', () => {
     it('should return correct values', async () => {
-      const c = characters[1];
+      const roomPOJO = {
+        layout : 
+        [
+          ['x', 'x', 'x', 'x', 'x', 'x', 'x'],  
+          ['x', 'x', 'x', 'x', 'x', 'x', 'x'],  
+          ['x', 'x', 'x', 'x', 'x', 'x', 'x'],  
+          ['x', 'x', 'x', 'x', 'x', 'x', 'x'],  
+          ['x', 'x', 'x', 'x', 'x', 'x', 'x'],  
+          ['x', 'x', 'x', 'x', 'x', 'x', 'x'],  
+          ['x', 'x', 'x', 'x', 'x', 'x', 'x'],  
+          ['x', 'x', 'x', 'x', 'x', 'x', 'x'],  
+          ['x', 'x', 'x', 'x', 'x', 'x', 'x'],  
+          ['x', 'x', 'x', 'x', 'x', 'x', 'x'],  
+        ]
+
+      }
       const player = await new Player(c);
 
       assert.equal(player.getName(), c.name);

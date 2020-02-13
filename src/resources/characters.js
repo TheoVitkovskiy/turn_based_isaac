@@ -2,7 +2,7 @@ module.exports = [
   {
     'name' : 'isaac',
     'title' : 'Isaac',
-    'health' : {
+    'hearts' : {
       'red' : 6,
       'blue' : 0
     },
@@ -20,7 +20,7 @@ module.exports = [
   {
     'name' : 'blue_baby',
     'title' : 'Blue Baby',
-    'health' : {
+    'hearts' : {
       'red' : 0,
       'blue' : 6
     },

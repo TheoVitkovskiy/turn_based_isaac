@@ -1,17 +1,18 @@
-module.exports = class Consumables {
-  setRed(red){
+module.exports = class Hearts {
+
+  set red(red){
     this._red = red;
   }
 
-  setBlue(blue){
+  set blue(blue){
     this._blue = blue;
   }
 
-  getRed(){
+  get red(){
     return this._red;
   }
 
-  getBlue(){
+  get blue(){
     return this._blue;
   }
 }

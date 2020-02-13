@@ -1,7 +1,10 @@
 'use strict';
 
-const { prompts } = require('../modules/interactive_prompt');
-const characters = require('../resources/characters');
+const { prompts } = require('../../modules/interactive_prompt');
+const characters = require('../../resources/characters');
+const Consumables = require('./structs/Consumables');
+const Hearts = require('./structs/Hearts');
+const Stats = require('./structs/Stats');
 
 module.exports = class Player {
 
@@ -20,38 +23,52 @@ module.exports = class Player {
           return characters.find(c => c.name === characterName); 
         }
 
-        let character = playerPojo;
+        let c = playerPojo;
       
-        if (character === null)
-          character = await pickCharacter();
+        if (c === null)
+          c = await pickCharacter();
       
-        this.name = character.name;
-        this.title = character.title;
-        // hearts
-        this.heartsRed = character.hearts.red;
-        this.heartsBlue = character.hearts.blue;
-        // stats
-        this.damage = character.stats.damage;
-        this.tearDelay = character.stats.tear_delay;
-        this.range = character.stats.range;
-        // consumables
-        this.keys = character.consumables.keys;
-        this.bombs = character.consumables.bombs;
-        this.coins = character.consumables.coins;
+        this.name = c.name;
+        this.title = c.title;
+
+        const hearts = new Hearts();
+        hearts.red = c.hearts.red;
+        hearts.blue = c.hearts.blue;
+        this.hearts = hearts;
+
+        const stats = new Stats();
+        stats.damage = c.stats.damage;
+        stats.tearDelay = c.stats.tear_delay;
+        stats.range = c.stats.range;
+        this.stats = stats;
+
+        const consumables = new Consumables();
+        consumables.keys = c.consumables.keys;
+        consumables.bombs = c.consumables.bombs;
+        consumables.coins = c.consumables.coins;
+        this.consumables = consumables;
 
         return this;
       })(); 
   }
-
-  getDamage() {
-    return this.damage;
+  
+  getName() {
+    return this.name;
   }
 
-  getTearDelay() {
-    return this.tear_delay;
+  getTitle() {
+    return this.title;
   }
 
-  getRange() {
-    return this.range;
+  getHearts() {
+    return this.hearts;
+  }
+
+  getConsumables() {
+    return this.consumables;
+  }
+
+  getStats() {
+    return this.stats;
   }
 }
