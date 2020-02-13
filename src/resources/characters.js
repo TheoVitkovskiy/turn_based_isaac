@@ -6,9 +6,16 @@ module.exports = [
       'red' : 6,
       'blue' : 0
     },
-    'damage' : 60,
-    'tear_delay' : 100,
-    'range' : 100
+    'stats' : {
+      'damage' : 60,
+      'tear_delay' : 100,
+      'range' : 100
+    },
+    'consumables' : {
+      'keys' : 1,
+      'bombs' : 0,
+      'coins' : 0
+    }
   },
   {
     'name' : 'blue_baby',
@@ -17,8 +24,15 @@ module.exports = [
       'red' : 0,
       'blue' : 6
     },
-    'damage' : 70,
-    'tear_delay' : 100,
-    'range' : 120
+    'stats' : {
+      'damage' : 70,
+      'tear_delay' : 100,
+      'range' : 120
+    },
+    'consumables' : {
+      'keys' : 0,
+      'bombs' : 1,
+      'coins' : 3
+    }
   },
 ]
