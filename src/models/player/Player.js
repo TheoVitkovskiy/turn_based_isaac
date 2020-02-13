@@ -2,9 +2,9 @@
 
 const { prompts } = require('../../modules/interactive_prompt');
 const characters = require('../../resources/characters');
-const Consumables = require('./structs/Consumables');
-const Hearts = require('./structs/Hearts');
-const Stats = require('./structs/Stats');
+const Consumables = require('./Consumables');
+const Hearts = require('./Hearts');
+const Stats = require('./Stats');
 
 module.exports = class Player {
 

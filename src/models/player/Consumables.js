@@ -1,4 +1,4 @@
-module.exports = class Consumables {
+class Consumables {
   setRed(red){
     this._red = red;
   }
@@ -15,3 +15,5 @@ module.exports = class Consumables {
     return this._blue;
   }
 }
+
+module.exports = Consumables;
