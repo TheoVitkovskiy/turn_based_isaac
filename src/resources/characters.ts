@@ -1,4 +1,6 @@
-module.exports = [
+import {PlayerPojo} from 'src/ts/types/app_types';
+
+const characters:PlayerPojo[]  = [
   {
     'name' : 'isaac',
     'title' : 'Isaac',
@@ -15,6 +17,11 @@ module.exports = [
       'keys' : 1,
       'bombs' : 0,
       'coins' : 0
+    },
+    'position' : {
+      'x' : 7,
+      'y' : 7,
+      'z' : 1
     }
   },
   {
@@ -33,6 +40,13 @@ module.exports = [
       'keys' : 0,
       'bombs' : 1,
       'coins' : 3
+    },
+    'position' : {
+      'x' : 7,
+      'y' : 7,
+      'z' : 1
     }
   },
 ]
+
+export default characters;
