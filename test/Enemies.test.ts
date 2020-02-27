@@ -8,6 +8,7 @@ describe('Enemies', () => {
       const flyNormal: FlyNormal = new FlyNormal(
         new Position(6, 6, 2)
       );
+
       const actionPattern: Array<Action> = [
         Action.MOVE_UP,
         Action.MOVE_UP,
@@ -27,6 +28,7 @@ describe('Enemies', () => {
         Action.MOVE_RIGHT,
         Action.MOVE_UP,
       ]; 
+
       actionPattern.forEach(
         (action: Action) => {
           const nextAction: Action = flyNormal.getNextAction();
